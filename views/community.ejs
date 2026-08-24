@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body class="min-h-screen bg-neutral-warm font-sans text-black/87 antialiased">
+  <%- include('partials/header') %>
+
+  <main>
+    <%- include('partials/page-hero', {
+      heroBadge: 'Hiking Community',
+      heroTitle: '산악회 커뮤니티',
+      heroDesc: '산들바람 산악회 커뮤니티를 Express, Prisma, 게시판, 산행 일정, 활동 후기, Supabase 마이그레이션까지 단계별로 구축합니다.',
+      heroIcon: 'mountain',
+      heroGradient: 'community',
+      heroImage: '/images/hero-community.webp',
+      heroButtonLabel: '포트폴리오 다운로드',
+      heroButtonIcon: 'download',
+      heroButtonHref: '/downloads/4)산악회커뮤니티.pdf',
+      heroButtonDownload: '4)산악회커뮤니티.pdf'
+    }) %>
+
+    <section class="main-contents mx-auto max-w-7xl px-4 py-8 sm:px-5 lg:px-8">
+      <%- include('partials/community-content') %>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

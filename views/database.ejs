@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body class="min-h-screen bg-neutral-warm font-sans text-black/87 antialiased">
+  <%- include('partials/header') %>
+
+  <main>
+    <%- include('partials/page-hero', {
+      heroBadge: 'Database Lab',
+      heroTitle: '데이터베이스',
+      heroDesc: 'SQLite와 Prisma ORM으로 메모앱, 마크다운 프리뷰, 체크리스트, 프롬프트 관리, 로그인까지 단계별로 구축합니다.',
+      heroIcon: 'database',
+      heroGradient: 'database',
+      heroImage: '/images/hero-database.webp',
+      heroButtonLabel: '포트폴리오 다운로드',
+      heroButtonIcon: 'download',
+      heroButtonHref: '/downloads/3)데이터베이스.pdf',
+      heroButtonDownload: '3)데이터베이스.pdf'
+    }) %>
+
+    <section class="main-contents mx-auto max-w-7xl px-4 py-8 sm:px-5 lg:px-8">
+      <%- include('partials/database-content') %>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

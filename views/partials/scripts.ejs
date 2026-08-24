@@ -1,0 +1,50 @@
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  function normalizeCopyText(rawText) {
+    return rawText
+      .split(/\r?\n/)
+      .map(function (line) { return line.replace(/\u00a0/g, ' ').trimEnd(); })
+      .filter(function (line) { return line.trim().length > 0; })
+      .join('\n');
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    lucide.createIcons();
+
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', function () {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
+
+    document.addEventListener('click', async function (event) {
+      const btn = event.target.closest('.copy-prompt-btn');
+      if (!btn) return;
+
+      const box = btn.closest('.copy-prompt-box');
+      const content = box && box.querySelector('.copy-prompt-content');
+      if (!content) return;
+
+      const text = normalizeCopyText(content.innerText);
+      try {
+        await navigator.clipboard.writeText(text);
+        const icon = btn.querySelector('.copy-prompt-icon');
+        if (icon) {
+          icon.setAttribute('data-lucide', 'check');
+          lucide.createIcons();
+          setTimeout(function () {
+            icon.setAttribute('data-lucide', 'copy');
+            lucide.createIcons();
+          }, 1500);
+        }
+      } catch (err) {
+        console.error('복사 실패:', err);
+      }
+    });
+  });
+</script>

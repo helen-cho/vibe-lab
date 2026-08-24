@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body class="min-h-screen bg-neutral-warm font-sans text-black/87 antialiased">
+  <%- include('partials/header') %>
+
+  <main>
+    <%- include('partials/page-hero', {
+      heroBadge: 'Vibe Coding Lab',
+      heroTitle: '바이브 코딩<br class="sm:hidden">(Vibe Coding)',
+      heroDesc: '즐거운 분위기 속에서 코딩을 배우고, 직접 만들어보며 성장하는 학습 공간입니다. 아이디어를 화면 위에 올려보세요.',
+      heroIcon: 'code-2',
+      heroImage: '/images/hero.webp',
+      heroButtonLabel: '포트폴리오 다운로드',
+      heroButtonIcon: 'download',
+      heroButtonHref: '/downloads/바이브코딩교재.pdf',
+      heroButtonDownload: '바이브코딩교재.pdf'
+    }) %>
+
+    <section class="main-contents mx-auto max-w-7xl px-4 py-8 sm:px-5 lg:px-8">
+      <%- include('partials/vibe-content') %>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <%- include('partials/scripts') %>
+</body>
+</html>

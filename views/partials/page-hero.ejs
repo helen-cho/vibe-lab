@@ -1,0 +1,58 @@
+<%
+  var heroBgClass = 'bg-hero-gradient';
+  if (typeof heroGradient !== 'undefined') {
+    if (heroGradient === 'homepage') heroBgClass = 'bg-hero-gradient-homepage';
+    else if (heroGradient === 'agents') heroBgClass = 'bg-hero-gradient-agents';
+    else if (heroGradient === 'database') heroBgClass = 'bg-hero-gradient-database';
+    else if (heroGradient === 'community') heroBgClass = 'bg-hero-gradient-community';
+  }
+  var heroImageOverlayClass = 'from-house-green/92 via-starbucks/82 to-green-accent/72';
+  if (typeof heroGradient !== 'undefined' && heroGradient === 'homepage') {
+    heroImageOverlayClass = 'from-house-green/88 via-starbucks/70 to-gold/55';
+  } else if (typeof heroGradient !== 'undefined' && heroGradient === 'agents') {
+    heroImageOverlayClass = 'from-[#1a2f4a]/90 via-house-green/82 to-green-uplift/75';
+  } else if (typeof heroGradient !== 'undefined' && heroGradient === 'database') {
+    heroImageOverlayClass = 'from-house-green/93 via-[#1f4d42]/80 to-[#2d8a7a]/65';
+  } else if (typeof heroGradient !== 'undefined' && heroGradient === 'community') {
+    heroImageOverlayClass = 'from-house-green/90 via-green-uplift/75 to-[#c8964a]/50';
+  }
+%>
+<section class="relative overflow-hidden border-b border-black/5 <%= typeof heroImage !== 'undefined' && heroImage ? '' : heroBgClass %>">
+  <% if (typeof heroImage !== 'undefined' && heroImage) { %>
+    <img
+      src="<%= heroImage %>"
+      alt=""
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+      width="1920"
+      height="1080"
+      loading="eager"
+      decoding="async"
+      aria-hidden="true"
+    />
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-br <%= heroImageOverlayClass %>" aria-hidden="true"></div>
+  <% } %>
+  <div class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-green-accent/25 blur-3xl" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -bottom-20 -left-12 h-56 w-56 rounded-full bg-starbucks/20 blur-3xl" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-7xl px-4 py-10 text-center sm:px-5 sm:py-12 lg:px-8 lg:py-14">
+    <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-sm font-medium tracking-tight text-green-light">
+      <i data-lucide="<%= heroIcon || 'layout-template' %>" class="h-4 w-4"></i>
+      <%= heroBadge %>
+    </div>
+    <h1 class="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"><%- heroTitle %></h1>
+    <% if (typeof heroDesc !== 'undefined' && heroDesc) { %>
+      <p class="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg"><%= heroDesc %></p>
+    <% } %>
+    <% if (typeof heroButtonLabel !== 'undefined' && heroButtonLabel) { %>
+      <a
+        href="<%= typeof heroButtonHref !== 'undefined' ? heroButtonHref : '#' %>"
+        <% if (typeof heroButtonDownload !== 'undefined' && heroButtonDownload) { %>download="<%= heroButtonDownload %>"<% } %>
+        class="mt-4 inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-semibold tracking-tight text-green-accent shadow-sm ring-offset-house-green transition-all duration-200 hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 active:scale-95"
+      >
+        <% if (typeof heroButtonIcon !== 'undefined' && heroButtonIcon) { %>
+          <i data-lucide="<%= heroButtonIcon %>" class="h-4 w-4"></i>
+        <% } %>
+        <%= heroButtonLabel %>
+      </a>
+    <% } %>
+  </div>
+</section>

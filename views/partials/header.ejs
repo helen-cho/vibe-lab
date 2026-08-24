@@ -1,0 +1,61 @@
+<header class="sticky top-0 z-50 bg-white shadow-nav">
+  <div class="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:h-16 sm:px-5 lg:h-[72px] lg:px-8">
+    <a href="/" class="group flex items-center gap-3">
+      <span class="flex h-10 w-10 items-center justify-center rounded-full bg-green-accent text-white shadow-sm transition-transform duration-200 group-active:scale-95">
+        <i data-lucide="sparkles" class="h-5 w-5"></i>
+      </span>
+      <span class="text-lg font-semibold tracking-tight text-starbucks sm:text-xl">바이브코딩</span>
+    </a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="메인 메뉴">
+      <% navItems.forEach(function(item) {
+        var isActive = typeof currentPath !== 'undefined' && item.href === currentPath;
+      %>
+        <a
+          href="<%= item.href %>"
+          <% if (isActive) { %>aria-current="page"<% } %>
+          class="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium tracking-tight transition-colors <%= isActive ? 'bg-green-light text-starbucks font-semibold shadow-sm' : 'text-black/87 hover:bg-neutral-warm hover:text-green-accent' %>"
+        >
+          <i data-lucide="<%= item.icon %>" class="h-4 w-4 <%= isActive ? 'text-starbucks' : 'text-green-accent' %>"></i>
+          <%= item.label %>
+        </a>
+      <% }); %>
+    </nav>
+
+    <button
+      id="mobile-menu-btn"
+      type="button"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/20 text-black/87 transition-all duration-200 hover:bg-neutral-warm active:scale-95 lg:hidden"
+      aria-label="메뉴 열기"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <i data-lucide="menu" class="h-5 w-5"></i>
+    </button>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    class="hidden border-t border-black/10 bg-white px-4 py-3 lg:hidden"
+    aria-label="모바일 메뉴"
+  >
+    <ul class="flex flex-col gap-2">
+      <% navItems.forEach(function(item) {
+        var isActive = typeof currentPath !== 'undefined' && item.href === currentPath;
+      %>
+        <li>
+          <a
+            href="<%= item.href %>"
+            <% if (isActive) { %>aria-current="page"<% } %>
+            class="flex items-center gap-3 rounded-xl border px-4 py-3 text-sm font-medium tracking-tight transition-colors <%= isActive ? 'border-green-accent/40 bg-green-light/60 text-starbucks font-semibold' : 'border-black/10 bg-neutral-cool text-black/87 hover:border-green-accent/30 hover:bg-green-light/40' %>"
+          >
+            <span class="flex h-9 w-9 items-center justify-center rounded-full <%= isActive ? 'bg-green-accent text-white' : 'bg-green-accent/10 text-green-accent' %>">
+              <i data-lucide="<%= item.icon %>" class="h-4 w-4"></i>
+            </span>
+            <%= item.label %>
+          </a>
+        </li>
+      <% }); %>
+    </ul>
+  </nav>
+</header>
