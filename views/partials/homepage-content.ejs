@@ -24,7 +24,7 @@
     </p>
     <div class="space-y-4">
       <%- include('copy-box-textarea', { text: [
-        "목표: 아래 프로필 내용을 참고하여 풍부하게 가상의 더미 데이터를 생성한 후 마크다운 파일 'profile.md'로 저장한다.",
+        "목표: 아래 프로필 내용을 참고하여 풍부하게 가상의 더미 데이터를 생성한 후 마크다운 파일 `profile.md`로 저장한다.",
         "",
         "[프로필]",
         "1. 이름: 홍길동",
@@ -35,7 +35,7 @@
       ].join('\n') }) %>
 
       <%- include('copy-box-textarea', { text: [
-        "목표: '@profile.md' 파일 내용을 참고하여 순수하게 HTML로만 구성된 자기소개 페이지 하나를 작성한다.",
+        "목표: `profile.md` 파일 내용을 참고하여 순수하게 HTML로만 구성된 자기소개 페이지 하나를 작성한다.",
         "",
         "[유의사항]",
         "1. 웹 페이지를 만들 때 한글이 깨지지 않도록 한다.",
@@ -251,6 +251,7 @@
       "1. 백엔드 서버(BackEnd Server): Express",
       "2. 프론트엔드 템플릿(FrontEnd Template): EJS",
       "3. 서버 구동: `npm run dev`",
+      "4. 서버 중지: `npx kill-port 3000`",
       "",
       "[페이지 레이아웃]",
       "1. 네비게이션 바(Navigation Bar):",
