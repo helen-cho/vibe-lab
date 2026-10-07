@@ -104,6 +104,21 @@
     ].join('\n') }) %>
   </section>
 
+    <section class="space-y-5">
+    <h3 class="flex items-center gap-2 text-2xl font-semibold tracking-tight text-starbucks">
+      3. 자기소개 홈페이지 추가기능
+    </h3>
+
+    </div>
+    <%- include('copy-box-textarea', { text: [
+      "1. Light, Dark 모드를 클릭한 경우 '정말로 변경하실래요?' 모달창을 띄워 '예'인 경우에만 변경한다.",
+      "2. 모달창 헤더의 배경색과 글자색은 기본 버튼 테마를 적용한다.",
+      "3. 모든 한글 글꼴은 https://fonts.google.com/specimen/Sunflower?lang=ko_Kore&preview.lang=ko_Kore Sunflower로 변경한다.",
+      "4. 이름 왼쪽에 30대 남성 프로필 사진을 생성해서 예쁘게 넣는다.",
+      "5. 프로필 이미지를 클릭하면 모달창에 큰 이미지를 출력한다."
+    ].join('\n') }) %>
+  </section>
+
   <!-- 과일 가게 홈페이지 -->
   <section class="space-y-5">
     <h2 class="flex items-center gap-2 text-2xl font-semibold tracking-tight text-starbucks sm:text-3xl">
@@ -184,18 +199,30 @@
     <h3 class="!mt-12 flex items-center gap-2 text-2xl font-semibold tracking-tight text-starbucks">
       3. 홈페이지 다듬기
     </h3>
-    <p>1) 히어로 섹션에 배경으로 사용할 이미지를 생성한다.</p>
+    <p>히어로 섹션에 배경으로 사용할 이미지를 생성하여 히어로 섹션 배경으로 변경하는 프롬프트를 실행한다.</p>
     <%- include('copy-box-textarea', { text: [
-      "우리 홈페이지와 어울리는 최적화된 가벼운 히어로 이미지(images/hero.webp)를 생성한다."
+      "우리 홈페이지와 어울리는 최적화된 가벼운 히어로 이미지(images/hero.webp)를 생성하여 히어로 섹션 배경으로 변경한다."
     ].join('\n') }) %>
-    <p>2) [<b>Visual Studio Code</b>]-[<b>View</b>]-[<b>Command Palette</b>]-[<b>Open Browser</b>]에서 HTML를 출력하여 히어로 섹션을 클릭한다.</p>
-    <p>3) 생성한 이미지를 히어로 섹션 배경으로 바꿔주는 프롬프트를 실행한다.</p>
-    <%- include('copy-box-textarea', { text: [
-      "<section> 영역에 @images/hero.jpg 이미지를 멋지게 배경으로 출력한다."
-    ].join('\n') }) %>
-    <p>4) 8개의 과일이미지를 생성하여 상품 카드 이미지 영역에 출력하는 프롬프트를 실행한다.</p>
+
+    <p>8개의 과일이미지를 생성하여 상품 카드 이미지 영역에 출력하는 프롬프트를 실행한다.</p>
     <%- include('copy-box-textarea', { text: [
       "최적화된 가벼운 과일 이미지 webp 파일 8개를 생성하여 상품 카드 이미지 영역에 출력한다."
+    ].join('\n') }) %>
+    <h3 class="!mt-12 flex items-center gap-2 text-2xl font-semibold tracking-tight text-starbucks">
+      4. 장바구니 페이지 만들기
+    </h3>
+    <%- include('copy-box-textarea', { text: [
+      "목표 아래 요구사항을 구현하는 장바구니 페이지를 생성 후 장바구니 메뉴와 연결한다.",
+      "",
+      "[요구사항]",
+      "1. 장바구니 목록을 출력한다.",
+      "2. 장바구니 아이템의 수량을 수정하는 기능을 추가한다.",
+      "3. 장바구니 아이템을 삭제하는 기능을 추가한다.",
+      "4. 삭제하는 경우 '정말로 삭제하시겠습니까?' 모달창을 띄워 예인 경우에만 삭제한다.",
+      "",
+      "[디자인 요구사항]",
+      "1. 모달창의 헤더의 배경색과 글자색은 기본 버튼 색상과 동일하게 설정한다.",
+      "2. 장바구니 페이지에 메인 페이지 히어로 섹션 영역을 출력한다."
     ].join('\n') }) %>
   </section>
 
@@ -266,7 +293,22 @@
     ].join('\n') }) %>
 
     <h3 class="!mt-12 flex items-center gap-2 text-2xl font-semibold tracking-tight text-starbucks">
-      3. 프로젝트 배포
+      3. 인테리어 업체 홈페이지 추가기능
+    </h3>
+    <%- include('copy-box-textarea', { text: [
+      "[추가 요구사항]",
+      "1. 시공사례 이미지를 검색하여 다운로드하지 않고 링크로 출력한다.",
+      "2. 우리 홈페이지와 어울리는 이미지를 검색하여 다운로드하지 않고 히어로섹션 배경이미지에 링크로 출력한다.",
+      "3. 최적화된 히어로 이미지(.webp) 5개를 검색하여 다운로드한 후 슬릭슬라이드로 미끄러지듯이 출력한다.",
+      "4. 히어로 이미지 좌, 우 이동 버튼을 사이즈를 키워 예쁜 커스텀(Custom) 버튼으로 변경한다.",
+      "",
+      "[디자인 요구사항]",
+      "1. @DESGIN.md 변경된 파일을 참고하여 디자인을 새로 적용한다.",
+      "2. 히어로 섹션 글자 색상을 이미지와 잘 어울리도록 변경한다.",
+    ].join('\n') }) %>
+
+    <h3 class="!mt-12 flex items-center gap-2 text-2xl font-semibold tracking-tight text-starbucks">
+      4. 프로젝트 배포
     </h3>
     <p>
       Vercel(버셀)은 웹 애플리케이션을 빠르고 쉽게 배포하고 호스팅할 수 있게 해주는 클라우드 플랫폼이다. 복잡한 서버 설정 없이 깃허브 같은 저장소를 연동하기만 하면 자동으로 웹을 빌드하고 전 세계에 배포해 준다.
