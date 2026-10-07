@@ -276,7 +276,7 @@
         <a href="https://getdesign.md" target="_blank" rel="noopener noreferrer" class="font-medium text-green-accent underline underline-offset-4 hover:text-starbucks">https://getdesign.md</a> 접속하여
       </p>
       <p>
-        [<b>Starbucks</b>]-[<b>DESIGN.md</b>]-[<b>DESIGN.md</b>]-[<b>Copy</b>] 복사하여 <b>DESIGN.md</b> 파일에 붙여넣는다.</b>
+        [<b>Starbucks</b>]-[<b>DESIGN.md</b>]-[<b>Copy</b>] 복사하여 루트 폴더에 새로운 <b>DESIGN.md</b> 파일을 생성한 후 이파일에 붙여넣는다.</b>
       </p>
     </div>
     <%- include('copy-box-textarea', { text: [
@@ -286,10 +286,10 @@
       "Tailwind CSS CDN, lucide CDN",
       "",
       "[디자인 요구사항]",
-      "1. @DESIGN.md 디자인 기획서를 반영하여 사이트 전체가 모던하고 세련된 인테리어 홈페이지 톤으로 변경한다.",
+      "1. @DESIGN.md 파일을 참고하여 사이트 전체가 모던하고 세련된 인테리어 홈페이지 톤으로 변경한다.",
       "2. Tailwind CSS를 조합해서 'shadcn/ui' 디자인이랑 똑같이 생긴 '버튼', '카드상자'로 깔끔하게 교체한다.",
       "3. 카드(박스)에 마우스를 올리면 살짝 떠오르는 부드러운 애니메이션 효과와 고급스러운 그림자를 추가한다.",
-      "4. 아이콘은 'lucide' 라이브러리를 사용해 인테리어업체 홈페이지에 어울리는 그래픽 요소들로 배치한다."
+      "4. 아이콘은 'lucide' 라이브러리를 사용해 인테리어 홈페이지에 어울리는 그래픽 요소들로 배치한다."
     ].join('\n') }) %>
 
     <h3 class="!mt-12 flex items-center gap-2 text-2xl font-semibold tracking-tight text-starbucks">
@@ -359,7 +359,7 @@
         <a href="https://getdesign.md" target="_blank" rel="noopener noreferrer" class="font-medium text-green-accent underline underline-offset-4 hover:text-starbucks">https://getdesign.md</a> 접속하여
       </p>
       <p>
-        [<b>Apple</b>]-[<b>DESIGN.md</b>]-[<b>DESIGN.md</b>]-[<b>Copy</b>] 복사하여 <b>DESIGN.md</b> 파일에 붙여넣는다.</b>
+        [<b>Apple</b>]-[<b>DESIGN.md</b>]-[<b>Copy</b>] 복사하여 루트 폴더에 새로운 <b>DESIGN.md</b> 파일을 생성한 후 이파일에 붙여넣는다.</b>
       </p>
     </div>
     <%- include('copy-box-textarea', { text: [
@@ -393,11 +393,13 @@
       2. 사과(Apple) 게임
     </h3>
     <%- include('copy-box-textarea', { text: [
-      "사과 게임 규칙을 검색하여 `apple_game.md` 마크다운 파일에 저장한다."
+      "애플(Apple) 게임 규칙을 검색하여 `apple_game.md` 마크다운 파일에 저장한다."
     ].join('\n') }) %>
     <%- include('copy-box-textarea', { text: [
       "[애플게임 요구사항]",
-      "@apple_game.md 게임 규칙 기획서를 참고해서 프로그램 페이지를 작성한 후 '애플 게임' 상자를 클릭하면 해당 페이지로 이동한다."
+      "1. @apple_game.md 게임 규칙 기획서를 참고해서 프로그램 페이지를 작성한다.",
+      "2. 게임페이지의 넓이는 메인 콘텐츠 넓이와 같게한다.",
+      "3. 메인 콘텐츠의 '애플 게임' 상자를 클릭하면 해당 페이지(애플게임)으로 이동한다."
     ].join('\n') }) %>
     <%- include('copy-box-textarea', { text: [
       "[애플게임 추가 요구사항]",
@@ -413,15 +415,17 @@
       3. 알카노이드(Arkanoid) 게임
     </h3>
     <%- include('copy-box-textarea', { text: [
-      "알카노이드 게임 규칙을 검색하여 `arkanoid_game.md` 마크다운 파일에 저장한다."
+      "알카노이드(Arkanoid) 게임 규칙을 검색하여 `arkanoid_game.md` 마크다운 파일에 저장한다."
     ].join('\n') }) %>
     <%- include('copy-box-textarea', { text: [
       "[알카노이드게임 요구사항]",
-      "'arkanoid_game.md' 기획서를 참고해서 프로그램 페이지를 작성한 후 '알카노이드 게임' 상자를 클릭하면 해당 페이지로 이동한다."
+      "1. @arkanoid_game.md 기획서를 참고해서 게임 프로그램 페이지를 작성한다.",
+      "2, 게임페이지의 넓이는 메인 콘텐츠 넓이와 같게한다.",
+      "3. 메인 콘텐츠의 '알카노이드 게임' 상자를 클릭하면 해당 페이지(알카노이드 게임)으로 이동한다."
     ].join('\n') }) %>
     <%- include('copy-box-textarea', { text: [
-      "[알카노이드 추가 요구사항]",
-      "단조로운 벽돌 패턴을 깨고 내구도와 속성을 가진 특수 벽돌들을 추가한다.",
+      "[알카노이드게임 추가 요구사항]",
+      "단조로운 벽돌 패턴을 깨고 내구도와 속성을 가진 특수 벽돌들을 추가하고 벽돌의 디자인을 실제 벽돌과 유사하게 디자인한다.",
       "1. 일반 벽돌: 노란색이나 초록색으로 1대 맞으면 깨짐.",
       "2. 단단한 벽돌: 회색 벽돌로, 3번 맞아야 깨짐. 맞을 때마다 금이 가는 시각적 효과(Cracked effect)를 준다.",
       "3. 폭발 벽돌: 빨간색 벽돌로, 파괴될 때 상하좌우 인접한 벽돌을 함께 파괴하는 범위 데미지를 준다.",
