@@ -11,6 +11,20 @@
   document.addEventListener('DOMContentLoaded', function () {
     lucide.createIcons();
 
+    function autoResize(textarea) {
+      textarea.style.height = 'auto';
+      const borderHeight = textarea.offsetHeight - textarea.clientHeight;
+      textarea.style.height = textarea.scrollHeight + borderHeight + 'px';
+    }
+
+    document.querySelectorAll('.auto-textarea').forEach(autoResize);
+    document.addEventListener('input', function (event) {
+      if (event.target.classList.contains('auto-textarea')) autoResize(event.target);
+    });
+    window.addEventListener('resize', function () {
+      document.querySelectorAll('.auto-textarea').forEach(autoResize);
+    });
+
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
@@ -22,6 +36,18 @@
       });
     }
 
+    document.addEventListener('click', function (event) {
+      const resetBtn = event.target.closest('.reset-prompt-btn');
+      if (!resetBtn) return;
+
+      const box = resetBtn.closest('.copy-prompt-box');
+      const textarea = box && box.querySelector('textarea.copy-prompt-content');
+      if (!textarea) return;
+
+      textarea.value = textarea.defaultValue;
+      autoResize(textarea);
+    });
+
     document.addEventListener('click', async function (event) {
       const btn = event.target.closest('.copy-prompt-btn');
       if (!btn) return;
@@ -30,7 +56,8 @@
       const content = box && box.querySelector('.copy-prompt-content');
       if (!content) return;
 
-      const text = normalizeCopyText(content.innerText);
+      const rawText = content.tagName === 'TEXTAREA' ? content.value : content.innerText;
+      const text = normalizeCopyText(rawText);
       try {
         await navigator.clipboard.writeText(text);
         const icon = btn.querySelector('.copy-prompt-icon');

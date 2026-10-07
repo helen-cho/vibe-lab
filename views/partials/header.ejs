@@ -14,9 +14,9 @@
         <a
           href="<%= item.href %>"
           <% if (isActive) { %>aria-current="page"<% } %>
-          class="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium tracking-tight transition-colors <%= isActive ? 'bg-green-light text-starbucks font-semibold shadow-sm' : 'text-black/87 hover:bg-neutral-warm hover:text-green-accent' %>"
+          class="inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-base font-medium tracking-tight transition-colors <%= isActive ? 'bg-green-light text-starbucks font-semibold shadow-sm' : 'text-black/87 hover:bg-neutral-warm hover:text-green-accent' %>"
         >
-          <i data-lucide="<%= item.icon %>" class="h-4 w-4 <%= isActive ? 'text-starbucks' : 'text-green-accent' %>"></i>
+          <i data-lucide="<%= item.icon %>" class="h-[18px] w-[18px] <%= isActive ? 'text-starbucks' : 'text-green-accent' %>"></i>
           <%= item.label %>
         </a>
       <% }); %>
