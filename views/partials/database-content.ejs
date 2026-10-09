@@ -178,10 +178,10 @@
       JWT(JSON Web Token)는 웹사이트나 앱에서 사용하는 '디지털 신분증' 또는 '위조 방지 입장권'이다. 로그인에 성공한 유저에게 서버가 발급해 주며, 유저는 이후 서비스를 이용할 때마다 이 토큰을 서버에 보여주어 자신이 로그인된 상태임을 증명한다.
     </p>
     <p>
-      개인 스킬인 경우 [<b>C:\</b>]-[<b>사용자</b>]-[<b>사용자 아이디</b>]-[<b>.claude</b>]-[<b>.skills</b>]-[<b>login-join-skill-builder</b>] 폴더에 스킬 마크다운 파일이 저장된다.
+      개인 스킬인 경우 [<b>c:</b>]-[<b>사용자</b>]-[<b>아이디</b>]-[<b>.claude</b>]-[<b>.skills</b>]-[<b>login-join-skill-builder</b>] 폴더에 스킬 마크다운 파일이 저장된다.
     </p>
     <%- include('copy-box-textarea', { text: [
-      "/create-skill",
+      "/skill-creator",
       "",
       "1. Skill name:",
       " - login-join-skill-builder",
@@ -238,11 +238,11 @@
     ].join('\n') }) %>
     <p class="font-semibold text-starbucks">● Google Cloud Console에서 OAuth 2.0 클라이언트 ID 생성</p>
     <ol class="list-inside list-decimal space-y-2 pl-2">
-      <li>[구글 클라우드 콘솔]-[프로젝트]-[새 프로젝트]에서 새 프로젝트(vibe-coding)를 생성한다.</li>
+      <li>[<a href="https://console.cloud.google.com/" target="_blank" rel="noopener noreferrer" class="font-medium text-green-accent underline underline-offset-4 hover:text-starbucks">구글 클라우드 콘솔</a>]-[프로젝트]-[새 프로젝트]에서 새 프로젝트(vibe-coding)를 생성한다.</li>
       <li>[vibe-coding]-[API 및 서비스]-[OAuth 동의 화면]-[앱 정보]-[대상: 외부]-[연락처 정보]-[만들기] 클릭</li>
       <li>[vibe-coding]-[API 및 서비스]-[사용자 인증 정보]-[사용자 인증 정보 만들기]-[OAuth 클라이언트 ID]-[애플리케이션 유형]-[만들기] 클릭</li>
       <li>[vibe-coding]-[API 및 서비스]-[사용자 인증 정보] OAuth 2.0 클라이언트 ID와 클라이언트 비밀번호를 복사한다.</li>
-      <li><b>.env</b> 파일에 GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_CALLBACK_URL 값들을 입력한다.</li>
+      <li><b>.env</b> 파일에 GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REDIRECT_URI 값들을 입력한다.</li>
     </ol>
     <div class="overflow-hidden rounded-xl border border-green-accent/10 bg-green-light/45 p-4 text-[16.8px] leading-relaxed text-black/58 shadow-card sm:p-5">
       <p class="break-all">GOOGLE_CLIENT_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
