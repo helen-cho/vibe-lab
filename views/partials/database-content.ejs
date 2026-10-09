@@ -44,9 +44,9 @@
       "목표: 아래 기술스택과 내용을 참고하여 'DATABASE LAB' 위한 메인 페이지를 작성한다.",
       "",
       "[기술스택]",
-      "1. 웹 서버: Express + EJS",
-      "2. 데이터베이스: SQLite + Prisma ORM (데이터베이스 이름: dev.db)",
-      "3. 디자인: 'Tailwind' CDN, 'lucide' CDN",
+      "1. 웹 서버: `Express` + `EJS`",
+      "2. 데이터베이스: `SQLite` + `Prisma ORM` (데이터베이스 이름: `dev.db`)",
+      "3. 디자인: `Tailwind CDN`, `lucide' CDN`",
       "4. 서버 구동: `npm run dev`",
       "",
       "[메인페이지 레이아웃]",
@@ -58,10 +58,10 @@
       "5. 푸터(Footer): 저작권, 회사 주소, 전화번호를 간단하게 더미 데이터로 생성",
       "",
       "[디자인 요구사항]",
-      "1. DESIGN.md (Starbucks) 디자인 마크다운 파일을 참고하여 테마를 설정한다.",
-      "2. Tailwind CSS를 조합해서 'shadcn/ui' 디자인이랑 똑같이 생긴 '버튼', '카드상자'로 깔끔하게 교체한다.",
+      "1. `DESIGN.md` 디자인 마크다운 파일을 참고하여 테마를 설정한다.",
+      "2. `Tailwind CSS`를 조합해서 `shadcn/ui` 디자인이랑 똑같이 생긴 '버튼', '카드상자'로 깔끔하게 교체한다.",
       "3. 카드(박스)에 마우스를 올리면 살짝 떠오르는 부드러운 애니메이션 효과와 고급스러운 그림자를 추가한다.",
-      "4. 아이콘은 'lucide 라이브러리를 사용해 홈페이지에 어울리는 그래픽 요소들로 배치한다."
+      "4. 아이콘은 `lucide` 라이브러리를 사용해 홈페이지에 어울리는 그래픽 요소들로 배치한다."
     ].join('\n') }) %>
   </section>
 
@@ -73,7 +73,7 @@
       "목표: 메모앱 관리 페이지를 작성하고 메인 콘텐츠 '메모앱' 카드 메뉴와 연결한다.",
       "",
       "[데이터베이스 요구사항]",
-      "1. Prisma와 SQLite을 연동하여 현재 데이터베이스에 'Memo' 테이블 스키마를 정의한다.",
+      "1. `Prisma`와 `SQLite`을 연동하여 현재 데이터베이스에 `memo` 테이블을 정의한다.",
       "2. 테이블 필드는 id, content(내용), tags(태그), createdAt(작성일)로 구성한다.",
       "",
       "[기능 및 UI/UX 요구사항]",
@@ -98,7 +98,7 @@
       "목표: 마크다운 프리뷰 관리 페이지를 작성하고 메인 콘텐츠 '마크다운 프리뷰' 카드 메뉴와 연결한다.",
       "",
       "[데이터베이스 요구사항]",
-      "1. Prisma와 SQLite을 연동하여 현재 데이터베이스에 'Documents' 테이블 스키마를 정의한다.",
+      "1. `Prisma`와 `SQLite`을 연동하여 현재 데이터베이스에 `documents` 테이블을 정의한다.",
       "2. 테이블 필드는 id, content(내용), updateAt(수정일)로 구성한다.",
       "",
       "[기능 및 UI/UX 요구사항]",
@@ -114,7 +114,7 @@
       " - '저장하기' 버튼을 누르면 입력창 내용이 저장되고, 사이드바 목록을 즉시 갱신한다.",
       " - 'PDF보내기'",
       "   1) 사용자가 'PDF보내기' 버튼을 누르면 프리뷰(Preview) 영역'의 HTML 렌더링 결과물만 PDF 파일로 다운로드한다.",
-      "   2) PDF 변환 설정((html2pdf 옵션): A4 용지 규격, 여백(Margin) 사방 15mm~20mm 부여"
+      "   2) PDF 변환 설정(`html2pdf` 옵션): A4 용지 규격, 여백(Margin) 사방 15mm~20mm 부여"
     ].join('\n') }) %>
   </section>
 
@@ -126,7 +126,7 @@
       "목표: 체크리스트 관리 페이지를 작성하고 메인 콘텐츠 '체크리스트' 카드 메뉴와 연결한다.",
       "",
       "[데이터베이스 요구사항]",
-      "1. Prisma와 SQLite을 연동하여 현재 데이터베이스에 'Todos' 테이블 스키마를 정의한다.",
+      "1. `Prisma`와 `SQLite`을 연동하여 현재 데이터베이스에 `todos` 테이블을 정의한다.",
       "2. 테이블 필드는 id, content(내용), completed(완료 유무), createdAt(작성일)로 구성한다.",
       "",
       "[기능 및 UI/UX 요구사항]",
@@ -184,7 +184,7 @@
       "/skill-creator",
       "",
       "1. Skill name:",
-      " - login-join-skill-builder",
+      " - `login-join-skill-builder`",
       "",
       "2. Description",
       " - 다양한 프레임워크에 맞춰 로그인, 회원가입, JWT 인증 로직 및 UI 폼을 규격화하여 생성해주는 보안 인증 스킬이다.",
@@ -195,7 +195,7 @@
       "",
       "4. Skill Prompt (AI 행동 지침)",
       "   [데이터베이스 요구사항]",
-      "   1. Prisma와 SQLite을 연동하여 현재 데이터베이스에 'Users' 테이블 스키마를 정의한다.",
+      "   1. `Prisma`와 `SQLite`을 연동하여 현재 데이터베이스에 `users` 테이블을 정의한다.",
       "   2. 테이블 필드는 email(이메일), password(비밀번호), nickname(닉네임), createdAt(가입일)로 구성한다.",
       "",
       "   [회원가입 기능]",
@@ -233,7 +233,7 @@
     </p>
     <p class="font-semibold text-starbucks">● 구글 소셜 로그인 기능을 추가하는 프롬프트 실행</p>
     <%- include('copy-box-textarea', { text: [
-      "1. 기존에 만들어진 일반 로그인 폼과 백엔드 인증 로직에 구글 소셜 로그인(OAuth 2.0) 기능을 추가한다.",
+      "1. 기존에 만들어진 일반 로그인 폼과 백엔드 인증 로직에 구글 소셜 로그인(`OAuth 2.0`) 기능을 추가한다.",
       "2. 구글 소셜 유저용 DB 필드 추가와 백엔드 콜백 라우터, 그리고 프론트엔드 버튼을 배치하고 연동 코드를 한 번에 작성한다."
     ].join('\n') }) %>
     <p class="font-semibold text-starbucks">● Google Cloud Console에서 OAuth 2.0 클라이언트 ID 생성</p>
@@ -245,9 +245,9 @@
       <li><b>.env</b> 파일에 GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REDIRECT_URI 값들을 입력한다.</li>
     </ol>
     <div class="overflow-hidden rounded-xl border border-green-accent/10 bg-green-light/45 p-4 text-[16.8px] leading-relaxed text-black/58 shadow-card sm:p-5">
-      <p class="break-all">GOOGLE_CLIENT_ID=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-      <p class="break-all">GOOGLE_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-      <p class="break-all">GOOGLE_REDIRECT_URI=http://localhost:3000/auth/google/callback</p>
+      <p class="break-all">GOOGLE_CLIENT_ID="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</p>
+      <p class="break-all">GOOGLE_CLIENT_SECRET="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</p>
+      <p class="break-all">GOOGLE_REDIRECT_URI="http://localhost:3000/auth/google/callback"</p>
     </div>
   </section>
 </article>
