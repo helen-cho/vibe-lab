@@ -200,59 +200,63 @@
 
   <section class="space-y-5">
     <h3 class="flex items-center gap-2 text-2xl font-semibold tracking-tight text-starbucks">
-      6. SQLite 데이터베이스를 Supabase로 마이그레이션(Migration)
+      6. MCP를 이용하여 SQLite 데이터베이스를 Supabase로 마이그레이션(Migration)
     </h3>
     <p>
-      수파베이스는 백엔드 개발 없이 데이터베이스, 로그인, 파일 저장 등을 API 형태로 바로 쓸 수 있게 해주는 오픈소스 백엔드 서비스이다.
+      <b>MCP (Model Context Protocol)</b>는 AI가 개발자의 컴퓨터 환경(컴파일러, 데이터베이스, 파일 시스템 등) 및 외부 도구와 직접 소통하고 행동할 수 있도록 연결해 주는 표준 통신 규격(브리지)을 뜻한다.
+      <b>수파베이스 (Supabase)</b>는 백엔드 개발 없이 데이터베이스, 로그인, 파일 저장 등을 API 형태로 바로 쓸 수 있게 해주는 오픈소스 백엔드 서비스이다.
     </p>
-
     <div class="space-y-3">
       <p class="font-semibold text-starbucks">● 수파베이스에 프로젝트 생성</p>
       <ol class="list-inside list-decimal space-y-2 pl-2">
-        <li>https://supabase.com/ 사이트에서 회원가입(Sign Up)을 하고 로그인(Sign In)한다.</li>
-        <li>[Your Organizations/Start your project]-[New Project]에서 프로젝트 이름(hiking)과 비밀번호(자동생성 후 저장)를 입력한다.</li>
-        <li>비밀번호를 분실: [hiking 프로젝트]-[Connect]-[Direct]-[Connect your app]-[Connection string]-[Reset password]로 새로 생성한다.</li>
+        <li><a href="https://supabase.com" target="_blank" rel="noopener noreferrer" class="font-medium text-green-accent underline underline-offset-4 hover:text-starbucks">https://supabase.com</a> 사이트에 접속하고 회원가입(Sign Up)을 한 후 로그인(Sign In)한다.</li>
+        <li>[Your Organizations]-[gmail's organization]에서 새로운 프로젝트를 생성(이름: hiking, 비밀번호: 자동생성)하고 <b>비밀번호를 저장</b>해 둔다.</li>
+        <li>[프로젝트]-[Connect]-[Direct]-[Connect your app]-[Connection string]-[Reset password]에서 <b>새로운 비밀번호</b>를 생성할 수 있다.</li>
       </ol>
     </div>
 
     <div class="space-y-3">
       <p class="font-semibold text-starbucks">● MCP를 사용한 슈파베이스와 커서 연결</p>
-      <p>
-        MCP는 모델 콘텍스트 프로토콜(Model Context Protocol)의 약자이며, AI가 개발자의 컴퓨터 환경(컴파일러, 데이터베이스, 파일 시스템 등) 및 외부 도구와 직접 소통하고 행동할 수 있도록 연결해 주는 표준 통신 규격(브리지)을 뜻한다.
-      </p>
       <ol class="list-inside list-decimal space-y-2 pl-2">
-        <li>[Supabase 로그인]-[프로필 아이콘]-[Account]-[Access Tokens]-[Generate new token] 버튼을 클릭한다.</li>
-        <li>토큰이름(Name)에 'cursor-mcp'를 입력하고 토큰 문자열을 반드시 따로 복사해 둔다. (창을 닫으면 다시 볼 수 없다)</li>
-        <li>Cursor 프로젝트 루트 디렉터리에 .curor 폴더를 생성하고 내부에 mcp.json 파일을 만들고 아래 코드를 그대로 붙여 넣는다.</li>
-      </ol>
-      <%- include('copy-box-textarea', { text: [
+        <li>프로젝트 루트폴더에 <b>.mcp.json</b> 파일을 생성한 후 아래 내용을 복사하여 붙여넣는다.</li>
+        <%- include('copy-box-textarea', { text: [
         "{",
-        "   \"mcpServers\": {",
-        "      \"supabase\": {",
+        "  \"mcpServers\": {",
+        "    \"supabase\": {",
         "      \"command\": \"npx\",",
         "      \"args\": [",
-        "         \"-y\", \"@supabase/mcp-server-supabase@latest\",",
-        "         \"--access-token\", \"여기에 1단계에서 복사한 액세스 토큰 입력\"",
-        "         ]",
-        "      }",
-        "   }",
+        "        \"-y\"", 
+        "        \"@supabase/mcp-server-supabase@latest\",",
+        "        \"--access-token\"", 
+        "        \"YOUR_ACTUAL_SUPABASE_TOKEN\"",
+        "      ]",
+        "    }",
+        "  }",
         "}"
       ].join('\n') }) %>
-      <p>4 [Cursor]-[Settings]-[Tools &amp; MCP] 활성화하면 최초 활성화 시 Supabase 브라우저 창이 열리고 권한승인(Authorize)을 하면 연결이 완료된다.</p>
+        <li>[Supabase Dashbord]-[로그인 아이콘]-[Account]-[Access Tokens]-[Generate new token] <b>새로운 토큰을 생성</b>한다.</li>
+        <li>.mcp.json 파일 "YOUR_ACTUAL_SUPABASE_TOKEN"에 발급받은 <b>새로운 토큰으로 등록</b>한다.</li>
+        <li>[VS-Code]-[View]-[Command palette...]-[Developer:Reload Window] <b>MCP 서버 연결 상태를 초기화하고 재연결</b> 한다.</li>
+        <li>Claude Code 채팅 입력창에서 <b>/MCP-servers</b> 명령어로 <b>Supabase 연결상태를 확인</b>한다.</li>
+      </ol>
     </div>
 
     <div class="space-y-3">
       <p class="font-semibold text-starbucks">● MCP를 사용한 데이터베이스 마이그레이션</p>
-      <%- include('copy-box-textarea', { text: [
-        "로컬 SQLite 데이터베이스를 클라우드 Supabase의 'hiking' 데이터베이스로 마이그레이션 해줘."
-      ].join('\n') }) %>
       <ol class="list-inside list-decimal space-y-2 pl-2">
-        <li>[Supabase 사이트]-[hiking 데이터베이스]-[Connect]-[ORM]-[Configure ORM]에서 DATABASE_URL를 복사한다.</li>
-        <li>복사한 URL을 .env 파일에 등록 후 [YOUR-PASSWORD] 자리에 데이터베이스 비밀번호(<span class="text-red-300">xxxx</span>)를 입력한다.</li>
+        <li>로컬에서 사용한 SQLite 데이터베이스를 <b>수파베이스 데이터베이스로 이동</b>한다.</li>
+        <%- include('copy-box-textarea', { text: [
+          "로컬 SQLite 데이터베이스를 클라우드 Supabase의 'hiking' 데이터베이스로 마이그레이션 한다."
+        ].join('\n') }) %>
+        <li>프로젝트에서 SQLite 데이터베이스 대신 <b>수파베이스를 사용하도록 소스 코드를 수정</b>한다.</li>
+        <%- include('copy-box-textarea', { text: [
+          "내 프로젝트의 소스코드를 로컬 SQLite 대신 클라우드 Supabase의 데이터베이스를 사용하도록 수정한다."
+        ].join('\n') }) %>
+        <li><b>.env</b> 파일 DATABASE_URL [YOUR-PASSWORD] 값을 <b>저정해 둔 비밀번호로 등록</b>한다.<b></b></li>
+        <div class="overflow-hidden rounded-xl border border-green-accent/10 bg-green-light/45 p-4 text-[16.8px] leading-relaxed text-black/58 shadow-card sm:p-5">
+          <p class="break-all"><b>DATABASE_URL</b>="postgresql://postgres:<b>[YOUR-PASSWORD]</b>@db.thdocjljtffcjhhoewln.supabase.co:5432/postgres"</p>
+        </div>
       </ol>
-      <%- include('copy-box-textarea', { text: [
-        "내 소스코드를 로컬 SQLite 대신 클라우드 Supabase의 데이터베이스를 사용하도록 수정해줘."
-      ].join('\n') }) %>
     </div>
   </section>
 </article>
